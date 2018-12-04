@@ -1,12 +1,38 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" />
 <head>
-  <meta charset="utf-8">
-  <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset='utf-8'/>
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
   <script src="script.js"></script>
 </head>
 <body>
-<p>TEST TEST</p>
+
+	<h1>Page de connexion</h1>
+
+	<table>
+	<tr>
+	<td>Prénom:</td>
+	<td><input type="text" name="firstName"/></td>
+	</tr>
+	<tr>
+	<td>Nom:</td>
+	<td><input type="text" name="firstName"/></td>
+	</tr>
+	<tr>
+	<td>Mot de passe:</td>
+	<td><input type="password" name="passe"/></td>
+	</tr>
+	<tr>
+	<td>Confirmer Mot de passe:</td>
+	<td><input type="password" name="passe"/></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td><input type="submit" class='submit' value="Valider"/></td></tr>
+	</table>
+
+
 </body>
 </html>
+
