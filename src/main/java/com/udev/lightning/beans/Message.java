@@ -2,31 +2,58 @@ package com.udev.lightning.beans;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class Message {
-	private String from;
-	private String to;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column(nullable = false)
+	private String transmitter;
+	
+	@Column(nullable = false)
+	private String receiver;
+	
+	@Column(nullable = false)
 	private LocalDate date;
-	private String message;
+	
+	@Column(nullable = false)
+	private String messageContent;
 	
 	public Message(String from, String to, LocalDate date, String message) {
 		super();
-		this.from = from;
-		this.to = to;
+		this.transmitter = from;
+		this.receiver = to;
 		this.date = date;
-		this.message = message;
+		this.messageContent = message;
 	}
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getFrom() {
-		return from;
+		return transmitter;
 	}
 	public void setFrom(String from) {
-		this.from = from;
+		this.transmitter = from;
 	}
 	public String getTo() {
-		return to;
+		return receiver;
 	}
 	public void setTo(String to) {
-		this.to = to;
+		this.receiver = to;
 	}
 	public LocalDate getDate() {
 		return date;
@@ -35,10 +62,10 @@ public class Message {
 		this.date = date;
 	}
 	public String getMessage() {
-		return message;
+		return messageContent;
 	}
 	public void setMessage(String message) {
-		this.message = message;
+		this.messageContent = message;
 	}
 	
 	
